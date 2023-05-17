@@ -7,13 +7,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Storyboarded {
+    
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .white
     }
+    
+    @IBAction func buyTapped(_ sender: Any) {
+        coordinator?.buySubscription()
+        print("buyTapped")
+    }
+    
+    @IBAction func createAccountTapped(_ sender: Any) {
+        coordinator?.createAccount()
+        print("createAccountTapped")
 
-
+    }
 }
 
